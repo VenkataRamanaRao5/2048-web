@@ -15,6 +15,7 @@ let classNames = new Map([
 ])
 
 const gameGrid = document.getElementById('game')
+const scoreBox = document.getElementById("score")
 
 const squareSize = parseInt(getComputedStyle(gameGrid).getPropertyValue('--size').split('px')[0]),
     padding = parseInt(getComputedStyle(gameGrid).getPropertyValue('--margin').split('px')[0])
@@ -83,6 +84,7 @@ class Grid {
             this.grid.push(boo)
         }
         this.score = 0
+        scoreBox.innerText = `Score: 0`
         this.willFuse = []
         this.createSquare()
         this.createSquare()
@@ -275,9 +277,6 @@ class Grid {
         return true
     }
 
-    askNewGame(){
-        console.log("Here")
-    }
 }
 
 let g = new Grid()
@@ -289,8 +288,9 @@ window.addEventListener('keydown', (e) => {
         case 'ArrowLeft':
         case 'ArrowRight':
             g['move' + e.key.substring(5)]()
-            if(g.isGameOver){
-                g.askNewGame()
+            if(g.isGameOver()){
+                if (window.confirm("New Game?"))
+                    g = new Grid()
             }
     }
     setTimeout(() => {
@@ -298,5 +298,10 @@ window.addEventListener('keydown', (e) => {
             e.clear()
         })
         g.willFuse = []
+        scoreBox.innerText = `Score: ${g.score}`
     }, 275)
+})
+
+document.getElementById("newGame").addEventListener('click', (e) => {
+    g = new Grid()
 })

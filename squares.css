@@ -7,6 +7,9 @@ html, body, #container{
     width: 100%;
     height: 100%;
     overflow: clip;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #game{
@@ -14,7 +17,6 @@ html, body, #container{
     border: solid burlywood 5px;
     position: absolute;
     top: 150px;
-    left: 150px;
     height: 325px;
     width: 325px;
 }
@@ -84,4 +86,33 @@ html, body, #container{
 
 .four-thousand-ninety-six {
     background-color: rgb(181, 134, 180)
+}
+
+#bar{
+    position: absolute;
+    width: 100%;
+    top:50px;
+    height: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+}
+
+#score{
+    height: 50px;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: 150px;
+    justify-self: right;
+}
+
+#newGame{
+    height: 50px;
+    width: 150px;
+    margin-left: 15px;
+    margin-right: 15px;
+    justify-self: left;
 }
