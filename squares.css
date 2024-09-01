@@ -1,0 +1,87 @@
+#game {
+    --margin: 5px;
+    --size: 75px;
+}
+
+html, body, #container{
+    width: 100%;
+    height: 100%;
+    overflow: clip;
+}
+
+#game{
+    background-color: rgb(187, 173, 160);
+    border: solid burlywood 5px;
+    position: absolute;
+    top: 150px;
+    left: 150px;
+    height: 325px;
+    width: 325px;
+}
+
+.square{
+    width: var(--size);
+    height: var(--size);
+    position: absolute;
+    margin: var(--margin);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+    top: 0;
+    font-size: 24px;
+    transition: left, top 250ms, 250ms;
+}
+
+.empty{
+    background-color: rgb(205, 193, 180);
+}
+
+.two {
+    background-color: rgb(238, 228, 218)
+}
+
+.four {
+    background-color: rgb(238, 225, 201)
+}
+
+.eight {
+    background-color: rgb(242, 177, 121)
+}
+
+.sixteen {
+    background-color: rgb(245, 149, 99)
+}
+
+.thirty-two {
+    background-color: rgb(246, 124, 95)
+}
+
+.sixty-four {
+    background-color: rgb(246, 94, 59)
+}
+
+.one-two-eight {
+    background-color: rgb(237, 207, 114)
+}
+
+.two-five-six {
+    background-color: rgb(237, 204, 97)
+}
+
+.five-twelve {
+    background-color: rgb(237, 200, 80)
+}
+
+.thousand-twenty-four {
+    background-color: rgb(237, 197, 63)
+}
+
+.two-thousand-forty-eight {
+    background-color: rgb(237, 194, 46)
+}
+
+.four-thousand-ninety-six {
+    background-color: rgb(181, 134, 180)
+}
